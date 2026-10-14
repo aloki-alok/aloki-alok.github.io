@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alok Ranjan (ryu): open source projects</title>
+  <meta name="description" content="Open source by Alok Ranjan (aloki-alok, ryu): crwl.sh, mctop, mcpify, mailgrade and earlier terminal, Rust and Go tools. Portfolio and writing at alokranjan.me." />
+  <link rel="canonical" href="https://aloki-alok.github.io/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="me" href="https://alokranjan.me/" />
+  <link rel="me" href="https://github.com/aloki-alok" />
+  <link rel="me" href="https://x.com/aloki_alok" />
+  <link rel="preload" href="/fonts/HackNerdFontMono-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/HackNerdFontMono-Bold.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Alok Ranjan (ryu): open source projects" />
+  <meta property="og:description" content="crwl.sh, mctop, mcpify, mailgrade and more. Portfolio at alokranjan.me." />
+  <meta property="og:url" content="https://aloki-alok.github.io/" />
+  <meta property="og:image" content="https://alokranjan.me/og.png?v=5" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@aloki_alok" />
+  <meta name="twitter:creator" content="@aloki_alok" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "url": "https://aloki-alok.github.io/",
+    "name": "Alok Ranjan (ryu): open source projects",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://alokranjan.me/#person",
+      "name": "Alok Ranjan",
+      "alternateName": ["ryu", "aloki-alok", "aloki_alok", "ryu-ryuk"],
+      "url": "https://alokranjan.me/",
+      "jobTitle": "Software Engineer",
+      "sameAs": [
+        "https://alokranjan.me/",
+        "https://github.com/aloki-alok",
+        "https://github.com/ryu-ryuk",
+        "https://x.com/aloki_alok",
+        "https://linkedin.com/in/ryulore"
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    @font-face { font-family: "Hack Nerd Font Mono"; font-weight: 400; font-display: swap; src: url("/fonts/HackNerdFontMono-Regular.woff2") format("woff2"); }
+    @font-face { font-family: "Hack Nerd Font Mono"; font-style: italic; font-weight: 400; font-display: swap; src: url("/fonts/HackNerdFontMono-Italic.woff2") format("woff2"); }
+    @font-face { font-family: "Hack Nerd Font Mono"; font-weight: 500 700; font-display: swap; src: url("/fonts/HackNerdFontMono-Bold.woff2") format("woff2"); }
+
+    /* Dark by default like alokranjan.me; light only when the OS asks for it. */
+    :root { --background: #000000; --foreground: #ededed; --muted: #a1a1a1; --faint: #6b6b6b; --border: #1f1f1f; }
+    @media (prefers-color-scheme: light) {
+      :root { --background: #ffffff; --foreground: #000000; --muted: #4d4d4d; --faint: #7a7a7a; --border: #e3e3e3; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { color-scheme: light dark; }
+    body {
+      background: var(--background); color: var(--foreground);
+      font: 0.875rem/1.7 "Hack Nerd Font Mono", ui-monospace, monospace;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    :focus-visible { outline: 2px solid var(--foreground); outline-offset: 2px; }
+    ul { list-style: none; }
+
+    .wrap { width: min(100% - 2rem, 46rem); margin: 0 auto; padding-block: 2rem 5rem; }
+    .top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+    .mark { display: block; width: 2rem; height: 2rem; background: var(--foreground);
+      -webkit-mask: url("/dragon-dots.svg") center / contain no-repeat; mask: url("/dragon-dots.svg") center / contain no-repeat; }
+    .top nav { display: flex; gap: 1.25rem; color: var(--muted); }
+
+    .name { position: relative; display: inline-block; margin-top: 3.5rem; }
+    h1 { font-size: clamp(2.75rem, 1.6rem + 5vw, 4.5rem); line-height: 0.98; }
+    .alias { position: absolute; left: calc(100% + 0.6rem); bottom: 0.15em; font-size: clamp(1.1rem, 0.8rem + 1.2vw, 1.6rem);
+      font-style: italic; color: var(--muted); transform: rotate(-8deg); transform-origin: left bottom; white-space: nowrap; }
+    .intro { margin-top: 1.25rem; color: var(--muted); font-size: 0.9375rem; }
+    .intro a { color: var(--foreground); text-decoration: underline; text-underline-offset: 4px; }
+
+    h2 { margin-top: 3.5rem; font-size: inherit; font-weight: 400; color: var(--faint); }
+    .repos { margin-top: 0.75rem; border-top: 1px solid var(--border); }
+    .repos li { padding-block: 0.8rem; border-bottom: 1px solid var(--border); }
+    .row { display: flex; justify-content: space-between; gap: 1rem; }
+    .row b { font-weight: 700; }
+    .row span { color: var(--faint); flex: none; }
+    .repos p { margin-top: 0.2rem; color: var(--muted); }
+    .links { margin-top: 0.25rem; display: flex; gap: 1.25rem; color: var(--faint); }
+    footer { margin-top: 4rem; color: var(--faint); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a href="https://alokranjan.me/" class="mark" aria-label="alokranjan.me"></a>
+      <nav aria-label="Elsewhere">
+        <a href="https://alokranjan.me/">Portfolio</a>
+        <a href="https://alokranjan.me/blog/">Blogs</a>
+        <a href="https://github.com/aloki-alok" rel="me">GitHub</a>
+      </nav>
+    </header>
+
+    <div class="name">
+      <h1>Alok<br />Ranjan</h1>
+      <span class="alias" title="I go online by ryu">ryu</span>
+    </div>
+    <p class="intro">i love OSS, currently building Voice AI systems :) Everything else lives at <a href="https://alokranjan.me/">alokranjan.me</a>.</p>
+
+    <h2>Building now</h2>
+    <ul class="repos">
+      <li>
+        <div class="row"><a href="https://crwl.sh"><b>crwl.sh</b></a><span>Go</span></div>
+        <p>Score any website or API on how ready it is for AI agents and answer engines.</p>
+        <div class="links"><a href="https://github.com/crwl-sh/crwl-cli">source</a><a href="https://crwl.sh">crwl.sh</a></div>
+      </li>
+      <li>
+        <div class="row"><a href="https://mctop.org"><b>mctop</b></a><span>MCP</span></div>
+        <p>A terminal client for MCP servers: explore, call, and CI-test any server from your shell.</p>
+        <div class="links"><a href="https://github.com/mctop-org/mctop">source</a><a href="https://mctop.org">mctop.org</a></div>
+      </li>
+      <li>
+        <div class="row"><a href="https://github.com/aloki-alok/mcpify"><b>mcpify</b></a><span>MCP</span></div>
+        <p>Turn any OpenAPI 3.x spec into a working MCP server in one command.</p>
+        <div class="links"><a href="https://github.com/aloki-alok/mcpify">source</a></div>
+      </li>
+      <li>
+        <div class="row"><a href="/mailgrade/"><b>mailgrade</b></a><span>email</span></div>
+        <p>Grade any domain's email deliverability from your terminal, with an A to F score and exact fixes.</p>
+        <div class="links"><a href="https://github.com/aloki-alok/mailgrade">source</a><a href="/mailgrade/">site</a></div>
+      </li>
+      <li>
+        <div class="row"><a href="/kana/"><b>kana</b></a><span>macOS</span></div>
+        <p>Kaomoji and emoji picker with clipboard history for macOS.</p>
+        <div class="links"><a href="https://github.com/aloki-alok/kana">source</a><a href="/kana/">site</a></div>
+      </li>
+    </ul>
+
+    <h2>Earlier</h2>
+    <ul class="repos">
+      <li>
+        <div class="row"><a href="https://github.com/ryu-ryuk/porterm"><b>porterm</b></a><span>terminal</span></div>
+        <p>Interactive terminal portfolio and resume viewer.</p>
+      </li>
+      <li>
+        <div class="row"><a href="https://github.com/ryu-ryuk/Enable-Cloudflare-DNS-System-Wide"><b>Enable-Cloudflare-DNS-System-Wide</b></a><span>Android</span></div>
+        <p>Magisk module that sets 1.1.1.1 as the DNS for all of Android.</p>
+      </li>
+      <li>
+        <div class="row"><a href="https://github.com/ryu-ryuk/time-rs-cli"><b>time-rs-cli</b></a><span>Rust</span></div>
+        <p>A timer for the terminal, written in Rust.</p>
+      </li>
+      <li>
+        <div class="row"><a href="https://github.com/ryu-ryuk/yoru-pastebin"><b>yoru-pastebin</b></a><span>Go</span></div>
+        <p>Simple, secure, ephemeral text sharing.</p>
+      </li>
+      <li>
+        <div class="row"><a href="https://github.com/ryu-ryuk/terminal-ascii-cam"><b>terminal-ascii-cam</b></a><span>terminal</span></div>
+        <p>Live webcam to ASCII in the terminal.</p>
+      </li>
+      <li>
+        <div class="row"><a href="https://github.com/ryu-ryuk/wallpapers"><b>wallpapers</b></a><span>Hyprland</span></div>
+        <p>Wallpapers from my Arch and Hyprland setup.</p>
+      </li>
+    </ul>
+
+    <footer>More projects, writing and contact at <a href="https://alokranjan.me/">alokranjan.me</a>.</footer>
+  </div>
+</body>
+</html>
